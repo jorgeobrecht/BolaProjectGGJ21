@@ -7,6 +7,7 @@ public class bola : MonoBehaviour
     private Rigidbody2D rbody;
     private float dir;
     public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,5 @@ public class bola : MonoBehaviour
     private void FixedUpdate()
     {
         rbody.AddForce(new Vector2(dir * speed, 0));
-
     }
 }
