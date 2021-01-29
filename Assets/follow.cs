@@ -6,17 +6,18 @@ public class follow : MonoBehaviour
 {
     
     public Transform bola;
-    public Vector3 offset;
+    public Vector3 v;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        v = new Vector3(bola.position.x, transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.LookAt(bola);
+        v.x = bola.position.x;
+        transform.position = v;
     }
 }
