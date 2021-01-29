@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 142732161}
   m_Layer: 0
   m_Name: "ch\xE3o"
-  m_TagString: ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -553,6 +553,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  jump: 0
-  grounded: 0
-  jumpForce: 0
