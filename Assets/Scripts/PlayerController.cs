@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             jump = true;
         }
+            
     }
 
     void Update()
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
     }
+
     private void OnCollisionStay2D(Collision2D col)
     {
         if(col.transform.tag == "ground")
@@ -71,9 +73,9 @@ public class PlayerController : MonoBehaviour
         }
         if(col.transform.tag == "enemy" && isAlive)
         {
-            Debug.Log("perdeu");
             srender.color = Color.black;
             isAlive = false;
+            GameController.PlayerLost();
         }
 
 
@@ -94,8 +96,7 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.tag == "victory")
         {
             GameController.PlayerWon();
-            
-            
+                       
         }
     }
 

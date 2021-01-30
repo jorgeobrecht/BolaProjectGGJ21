@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
     public static int winCount;
     public static bool isPlaying;
     public static bool isDead;
+    public static bool isPaused;
+    public GameObject pauseMenu;
 
     public static void PlayerWon()
     {
@@ -20,18 +22,43 @@ using UnityEngine.SceneManagement;
     public static void PlayerLost()
     {
         // função para quando a condição de derrota for verdadeira
+        Debug.Log("Player lost");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Start is called before the first frame update
-    static void Start()
+    void Start()
     {
         isPlaying = true;
+        isPaused = false;
         winCount = 0;
     }
 
-    // Update is called once per frame
-    static void Update()
+    public void Pause()
     {
-        
+        Debug.Log("pause");
+        if (isPaused) {
+            Time.timeScale = 1f;
+            isPaused = false;
+            pauseMenu.SetActive(false);
+        }
+            
+        else
+        {
+            Time.timeScale = 0f;
+            isPaused = true;
+            pauseMenu.SetActive(true);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown("escape"))
+        {
+            Pause();
+            
+        }
     }
 }
+    
