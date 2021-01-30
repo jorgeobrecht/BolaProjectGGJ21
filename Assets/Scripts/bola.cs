@@ -7,8 +7,6 @@ public class bola : MonoBehaviour
     private Rigidbody2D rbody;
     private SpriteRenderer srender;
     private float dir;
-    public float acel;
-    public float maxSpeed;
     public float speed;
     private bool jump = false;
     public bool grounded = false;
@@ -27,29 +25,7 @@ public class bola : MonoBehaviour
 
     void getInput()
     {
-
-        Vector3 pos = transform.position;
-
-        if (Input.GetKey("w"))
-        {
-            pos.z += speed * Time.deltaTime;
-        }
-        if (Input.GetKey("s"))
-        {
-            pos.z -= speed * Time.deltaTime;
-        }
-        if (Input.GetKey("d"))
-        {
-            pos.x += speed * Time.deltaTime;
-        }
-        if (Input.GetKey("a"))
-        {
-            pos.x -= speed * Time.deltaTime;
-        }
-
-
-        transform.position = pos;
-
+        dir = (Input.GetAxisRaw("Horizontal"));
         if (Input.GetKeyDown("space"))
         {
             jump = true;
@@ -65,27 +41,22 @@ public class bola : MonoBehaviour
 
     private void MovePlayer()
     {
-        //lados
-        speed = rbody.velocity.x;
-        if (Mathf.Abs(speed) < maxSpeed)
-            rbody.AddForce(new Vector2(dir * acel, 0), ForceMode2D.Impulse);
-
-        //if (Mathf.Abs(speed) == maxSpeed) Debug.Log("max");
+        rbody.velocity = new Vector2(dir * speed, rbody.velocity.y);    
 
         //pulo
         if (jump && grounded)
         {
-            rbody.AddForce(new Vector2(0, jumpForce),ForceMode2D.Impulse);
+            rbody.AddForce(new Vector2(0, jumpForce));
             grounded = false;
             jump = false;
         }
-        if (!grounded)
+    /*   if (!grounded)
         {
             if(rbody.velocity.y <= 0)
             {
-                rbody.AddForce(new Vector2(0,-fallWeight),ForceMode2D.Impulse);
+                rbody.AddForce(new Vector2(0,-fallWeight));
             }
-        }
+        }*/
     }
 
     private void FixedUpdate()
