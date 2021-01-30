@@ -6,10 +6,12 @@ public class bola : MonoBehaviour
 {
     private Rigidbody2D rbody;
     private float dir;
-    public float speed;
+    public float acel;
+    public float maxSpeed;
     private bool jump = false;
     public bool grounded = false;
-    public float jumpForce = 300;
+    public float jumpForce ;
+    public float fallWeight = 10;
     void Start()
     {
         rbody = gameObject.GetComponent<Rigidbody2D>();
@@ -23,14 +25,39 @@ public class bola : MonoBehaviour
         }
 
     }
-    private void FixedUpdate()
+
+    private void MovePlayer()
     {
-        rbody.AddForce(new Vector2(dir * speed, 0));
-        if(jump && grounded)
+        //lados
+        float finalSpeed = dir * acel;
+
+        if (dir == 0)
+            rbody.velocity = new Vector2(0, rbody.velocity.y);
+
+        if (finalSpeed >= maxSpeed) finalSpeed = maxSpeed;
+       
+            rbody.AddForce(new Vector2(finalSpeed, 0));
+        
+        if (finalSpeed == maxSpeed) Debug.Log("max");
+
+        //pulo
+        if (jump && grounded)
         {
             rbody.AddForce(new Vector2(0, jumpForce));
             jump = false;
         }
+        if (!grounded)
+        {
+            if(rbody.velocity.y <= 0)
+            {
+                rbody.AddForce(new Vector2(0,-fallWeight));
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        MovePlayer();
     }
     private void OnCollisionStay2D(Collision2D col)
     {

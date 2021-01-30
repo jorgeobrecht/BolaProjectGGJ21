@@ -11,13 +11,14 @@ public class follow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        v = new Vector3(bola.position.x, transform.position.y, transform.position.z);
+        v = new Vector3(bola.position.x, bola.position.y, transform.position.z);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         v.x = bola.position.x;
+        transform.LookAt(bola);
         transform.position = v;
     }
 }
