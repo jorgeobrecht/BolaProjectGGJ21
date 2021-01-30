@@ -29,6 +29,7 @@ public class bola : MonoBehaviour
         if(jump && grounded)
         {
             rbody.AddForce(new Vector2(0, jumpForce));
+            grounded = false;
             jump = false;
         }
     }
