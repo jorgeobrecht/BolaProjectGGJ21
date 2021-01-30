@@ -225,6 +225,11 @@ public class PlayerController : MonoBehaviour
         {
             GameController.Instance.PlayerWon();  
         }
+        if (collision.transform.tag == "enemy" && isAlive)
+        {
+            srender.color = Color.black;
+            GameController.Instance.PlayerLost();
+        }
     }
 
 }
