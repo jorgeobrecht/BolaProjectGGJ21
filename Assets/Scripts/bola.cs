@@ -8,6 +8,7 @@ public class bola : MonoBehaviour
     private float dir;
     public float acel;
     public float maxSpeed;
+    public float speed;
     private bool jump = false;
     public bool grounded = false;
     public float jumpForce ;
@@ -29,16 +30,12 @@ public class bola : MonoBehaviour
     private void MovePlayer()
     {
         //lados
-        float finalSpeed = dir * acel;
-
-        if (dir == 0)
-            rbody.velocity = new Vector2(0, rbody.velocity.y);
-
-        if (finalSpeed >= maxSpeed) finalSpeed = maxSpeed;
-       
-            rbody.AddForce(new Vector2(finalSpeed, 0));
         
-        if (finalSpeed == maxSpeed) Debug.Log("max");
+        speed = rbody.velocity.x;
+        if (Mathf.Abs(speed) < maxSpeed)
+            rbody.AddForce(new Vector2(dir * acel, 0));
+
+        if (Mathf.Abs(speed) == maxSpeed) Debug.Log("max");
 
         //pulo
         if (jump && grounded)
