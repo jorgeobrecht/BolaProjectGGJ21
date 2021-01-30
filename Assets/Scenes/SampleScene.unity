@@ -849,7 +849,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -896,11 +896,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a958862e0ad1c43a992e6f4b16088f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acel: 2
-  maxSpeed: 3
+  acel: 20
+  maxSpeed: 20
+  speed: 0
   grounded: 0
   jumpForce: 100
   fallWeight: 3
+<<<<<<< HEAD
 --- !u!1 &1483852719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,3 +1048,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  isAlive: 0
+>>>>>>> 695df872946162b677076a86b0ef72c25ed66be7

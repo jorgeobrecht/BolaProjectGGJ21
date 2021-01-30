@@ -5,16 +5,21 @@ using UnityEngine;
 public class bola : MonoBehaviour
 {
     private Rigidbody2D rbody;
+    private SpriteRenderer srender;
     private float dir;
     public float acel;
     public float maxSpeed;
+    public float speed;
     private bool jump = false;
     public bool grounded = false;
     public float jumpForce ;
     public float fallWeight = 10;
+    public bool isAlive;
     void Start()
     {
         rbody = gameObject.GetComponent<Rigidbody2D>();
+        srender = gameObject.GetComponent<SpriteRenderer>();
+        isAlive = true;
     }
     void Update()
     {
@@ -29,16 +34,12 @@ public class bola : MonoBehaviour
     private void MovePlayer()
     {
         //lados
-        float finalSpeed = dir * acel;
-
-        if (dir == 0)
-            rbody.velocity = new Vector2(0, rbody.velocity.y);
-
-        if (finalSpeed >= maxSpeed) finalSpeed = maxSpeed;
-       
-            rbody.AddForce(new Vector2(finalSpeed, 0));
         
-        if (finalSpeed == maxSpeed) Debug.Log("max");
+        speed = rbody.velocity.x;
+        if (Mathf.Abs(speed) < maxSpeed)
+            rbody.AddForce(new Vector2(dir * acel, 0));
+
+        if (Mathf.Abs(speed) == maxSpeed) Debug.Log("max");
 
         //pulo
         if (jump && grounded)
@@ -66,6 +67,13 @@ public class bola : MonoBehaviour
         {
             grounded = true;
         }
+        if(col.transform.tag == "enemy" && isAlive)
+        {
+            Debug.Log("perdeu");
+            acel = 0;
+            srender.color = Color.black;
+            isAlive = false;
+        }
 
     }
     private void OnCollisionExit2D(Collision2D col)
@@ -74,5 +82,6 @@ public class bola : MonoBehaviour
         {
             grounded = false;
         }
+        
     }
 }
