@@ -17,6 +17,11 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("Fecha o Programa");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
