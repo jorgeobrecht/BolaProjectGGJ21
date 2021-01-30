@@ -49,6 +49,7 @@ using UnityEngine.UI;
     public void PlayerWon()
     {
         // função para quando a condição de vitória for verdadeira
+        Time.timeScale = 0f;
         Debug.Log("Player won");
         victoryScreen.SetActive(true);
     }
