@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     { 
         //check de vitoria
-        if (collision.transform.tag == "victory")
+        if (collision.transform.tag == "victory" && isAlive)
         {
             GameController.Instance.PlayerWon();  
         }

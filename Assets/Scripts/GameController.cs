@@ -13,6 +13,8 @@ using UnityEngine.SceneManagement;
     public static bool isPaused;
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
+    public GameObject victoryScreen;
+
     public PlayerController player;
     private static IEnumerator coroutine;
 
@@ -34,7 +36,7 @@ using UnityEngine.SceneManagement;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void QuitApplication()
+    public void QuitToStartMenu()
     {
         Debug.Log("quit placeholder");
     }
@@ -43,7 +45,7 @@ using UnityEngine.SceneManagement;
     {
         // função para quando a condição de vitória for verdadeira
         Debug.Log("Player won");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name) ;
+        victoryScreen.SetActive(true);
     }
 
     public void PlayerLost()
