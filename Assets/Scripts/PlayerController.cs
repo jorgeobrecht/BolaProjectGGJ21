@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private bool tictac = false;
 
 
-
+    #region START, UPDATE e FIXED UPDATE
     void Start()
     {
         
@@ -59,6 +59,9 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
     }
 
+    #endregion
+
+    #region INPUT E MOVIMENTO
     //receber informação do teclado
     void getInput()
     {
@@ -132,7 +135,9 @@ public class PlayerController : MonoBehaviour
             rbody.gravityScale = gScale; 
         }
     }
+    #endregion
 
+    #region ATAQUE e BLOCK
     private void AttackControl()
     {
         if (attack)
@@ -164,6 +169,9 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    #endregion
+
+    #region ANIMAÇÂO E SOM
     public void Move()
     {
         canMove = true;
@@ -196,10 +204,11 @@ public class PlayerController : MonoBehaviour
             SoundManagerScript.PlaySound("Walk2");
         }
     }
+    #endregion
+
 
     private void OnCollisionStay2D(Collision2D col)
-    {
-        
+    {        
         //check colisão com inimigo
         if(col.transform.tag == "enemy" && isAlive)
         {
@@ -219,16 +228,21 @@ public class PlayerController : MonoBehaviour
     }
     // GANHOU
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
+    {
         //check de vitoria
         if (collision.transform.tag == "victory" && isAlive)
         {
-            GameController.Instance.PlayerWon();  
+            GameController.Instance.PlayerWon();
         }
         if (collision.transform.tag == "enemy" && isAlive)
         {
             srender.color = Color.black;
             GameController.Instance.PlayerLost();
+        }
+        if (collision.transform.tag == "collectable" && isAlive)
+        {
+            collision.gameObject.SetActive(false);
+            GameController.Instance.GetGota();
         }
     }
 
