@@ -405,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 927963220}
   gameOverScreen: {fileID: 208043501}
+  victoryScreen: {fileID: 957838368}
   player: {fileID: 1825694568}
 --- !u!4 &108367082
 Transform:
