@@ -1,34 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Controller : MonoBehaviour
+ public class GameController : MonoBehaviour
 {
-    public bola player;
-    public int winCount;
-    public bool isPlaying;
-    public bool isDead;
+    
+    public static int winCount;
+    public static bool isPlaying;
+    public static bool isDead;
 
-
-    public void PlayerWon()
+    public static void PlayerWon()
     {
         // função para quando a condição de vitória for verdadeira
+        Debug.Log("Player won");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name) ;
     }
 
-    public void PlayerLost()
+    public static void PlayerLost()
     {
         // função para quando a condição de derrota for verdadeira
     }
 
     // Start is called before the first frame update
-    void Start()
+    static void Start()
     {
         isPlaying = true;
         winCount = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    static void Update()
     {
         
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bola : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rbody;
     private SpriteRenderer srender;
@@ -76,7 +76,9 @@ public class bola : MonoBehaviour
             isAlive = false;
         }
 
+
     }
+
     private void OnCollisionExit2D(Collision2D col)
     {
         if (col.transform.tag == "ground")
@@ -85,4 +87,16 @@ public class bola : MonoBehaviour
         }
         
     }
+
+    // GANHOU
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+        if (collision.transform.tag == "victory")
+        {
+            GameController.PlayerWon();
+            
+            
+        }
+    }
+
 }
