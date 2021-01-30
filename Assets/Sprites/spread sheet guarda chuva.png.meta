@@ -1,0 +1,560 @@
+fileFormatVersion: 2
+guid: 5009abbc7961d6b42aba459125d42cf3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -759979643538934072
+    second: spread sheet guarda chuva_0
+  - first:
+      213: 6965039391146204094
+    second: spread sheet guarda chuva_1
+  - first:
+      213: -2865933696025412053
+    second: spread sheet guarda chuva_2
+  - first:
+      213: -7069652262924347058
+    second: spread sheet guarda chuva_3
+  - first:
+      213: 7725413141307674049
+    second: spread sheet guarda chuva_4
+  - first:
+      213: -6279019641452898081
+    second: spread sheet guarda chuva_5
+  - first:
+      213: 439562231888806639
+    second: spread sheet guarda chuva_6
+  - first:
+      213: -5014979494340366212
+    second: spread sheet guarda chuva_7
+  - first:
+      213: -8625887336394739924
+    second: spread sheet guarda chuva_8
+  - first:
+      213: -6228826581991964660
+    second: spread sheet guarda chuva_9
+  - first:
+      213: -7298960927782539085
+    second: spread sheet guarda chuva_10
+  - first:
+      213: 415362449720933240
+    second: spread sheet guarda chuva_11
+  - first:
+      213: -512890658645295447
+    second: spread sheet guarda chuva_12
+  - first:
+      213: 8741923482054773780
+    second: spread sheet guarda chuva_13
+  - first:
+      213: -7395486458438052209
+    second: spread sheet guarda chuva_14
+  - first:
+      213: 5917329286082113741
+    second: spread sheet guarda chuva_15
+  - first:
+      213: -4663208997510200862
+    second: spread sheet guarda chuva_16
+  - first:
+      213: 2535129109729719247
+    second: spread sheet guarda chuva_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6755e6a820475f0800000000000000
+      internalID: -759979643538934072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_1
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb5fd38c6ac8a060800000000000000
+      internalID: 6965039391146204094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_2
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e3592ec782a38d0800000000000000
+      internalID: -2865933696025412053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_3
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e499bd639bc83ed90800000000000000
+      internalID: -7069652262924347058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_4
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd47ce225e263b60800000000000000
+      internalID: 7725413141307674049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_5
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8df7d57e07cd8a0800000000000000
+      internalID: -6279019641452898081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_6
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe209606583a91600800000000000000
+      internalID: 439562231888806639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7079fb68b6376ab0800000000000000
+      internalID: -5014979494340366212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_8
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2fa6a16b21ba4880800000000000000
+      internalID: -8625887336394739924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_9
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00cbd4b933ce89a0800000000000000
+      internalID: -6228826581991964660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0f01e25b1e4ba90800000000000000
+      internalID: -7298960927782539085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_11
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87bf6a482f9a3c500800000000000000
+      internalID: 415362449720933240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_12
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aeb4d2d9a8d1e8f0800000000000000
+      internalID: -512890658645295447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_13
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c4589171d815970800000000000000
+      internalID: 8741923482054773780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86969fbf34fd5990800000000000000
+      internalID: -7395486458438052209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_15
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0b0f362a39e1250800000000000000
+      internalID: 5917329286082113741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_16
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1cffd9f14f84fb0800000000000000
+      internalID: -4663208997510200862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spread sheet guarda chuva_17
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3313d5e769e2320800000000000000
+      internalID: 2535129109729719247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 42bb9266d72b191408a5af8e16fb211d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

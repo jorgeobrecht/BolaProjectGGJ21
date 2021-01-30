@@ -20,6 +20,7 @@ public class GroundCheck : MonoBehaviour
         //groundcheck
         if (col.transform.tag == "ground")
         {
+            player.anim.SetBool("air", false);
             player.grounded = true;
             player.hovering = false;
             player.hover = true;
@@ -32,6 +33,7 @@ public class GroundCheck : MonoBehaviour
         //groundcheck
         if (col.transform.tag == "ground")
         {
+            player.anim.SetBool("air", true);
             player.grounded = false;
         }
     }

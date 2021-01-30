@@ -202,7 +202,7 @@ Animator:
   m_GameObject: {fileID: 1315403384730122084}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42754b9a06f6ed344ac17b1ed2410687, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d98738b03ddd64bb36fe55b86f8c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   speed: 0
   jump: 0
   grounded: 0
@@ -230,8 +231,9 @@ MonoBehaviour:
   hover: 0
   jumpForce: 0
   fallWeight: 10
-  gScale: 0
-  hoverGrav: 0
+  gScale: 5
+  hoverGrav: 0.5
+  blockCd: 4
   isAlive: 0
 --- !u!1 &1315403385087663695
 GameObject:
@@ -277,7 +279,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2, y: 0}
+  m_Offset: {x: 1.5, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -288,7 +290,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 3}
+  m_Size: {x: 2, y: 2.5}
   m_EdgeRadius: 0
 --- !u!1 &1315403385145251388
 GameObject:
