@@ -20,6 +20,8 @@ using UnityEngine.SceneManagement;
     public static void PlayerLost()
     {
         // função para quando a condição de derrota for verdadeira
+        Debug.Log("Player lost");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Start is called before the first frame update

@@ -71,9 +71,9 @@ public class PlayerController : MonoBehaviour
         }
         if(col.transform.tag == "enemy" && isAlive)
         {
-            Debug.Log("perdeu");
             srender.color = Color.black;
             isAlive = false;
+            GameController.PlayerLost();
         }
 
 

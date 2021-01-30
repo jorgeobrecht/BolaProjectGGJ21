@@ -403,10 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847d0d52e2684ac4bb5193a95d63b0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1306714609}
-  winCount: 0
-  isPlaying: 0
-  isDead: 0
 --- !u!4 &108367082
 Transform:
   m_ObjectHideFlags: 0
@@ -1921,7 +1917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1714991559
 Transform:
   m_ObjectHideFlags: 0
