@@ -38,7 +38,8 @@ using UnityEngine.SceneManagement;
 
     public void QuitToStartMenu()
     {
-        Debug.Log("quit placeholder");
+        Time.timeScale = 1f; // caso seja chamado do menu pausado
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void PlayerWon()
