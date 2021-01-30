@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private float lastShield;
     //info jogo
     public bool isAlive;
-    
+    private bool tictac = false;
 
 
 
@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         rbody.gravityScale = gScale;
         isAlive = true;
-        
         lastShield = -2*blockCd;
     }
     void Update()
@@ -112,6 +111,7 @@ public class PlayerController : MonoBehaviour
                 grounded = false;
                 jump = false;
                 anim.SetTrigger("jump");
+                SoundManagerScript.PlaySound("Jump");
             }
             else if(!grounded && hover)
             {
@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour
                 hovering = true;
                 anim.SetBool("float", true);
                 anim.SetTrigger("jump");
+                SoundManagerScript.PlaySound("OpenFloat");
             }
         }
         if(hovering && jumpDown && rbody.velocity.y < 0)
@@ -137,6 +138,7 @@ public class PlayerController : MonoBehaviour
         if (attack)
         {
             anim.SetTrigger("attack");
+            SoundManagerScript.PlaySound("OpenFloat");
             attack = false;
         }
     }
@@ -153,12 +155,13 @@ public class PlayerController : MonoBehaviour
         {
             lastShield = Time.time;
             anim.SetTrigger("block");
+            SoundManagerScript.PlaySound("Attack");
             block = false;
         }
         //mostrar cooldown
         if(lastShield + blockCd > Time.time)
         {
-            
+
         }
     }
     public void Move()
@@ -171,12 +174,29 @@ public class PlayerController : MonoBehaviour
         if(grounded && dir != 0)
         {
             anim.SetBool("walking", true);
+            
         }
         else
         {
             anim.SetBool("walking", false);
+
         }
     }
+    
+    public void WalkSound()
+    {
+        if(tictac)
+        {
+            tictac = !tictac;
+            SoundManagerScript.PlaySound("Walk1");
+        }
+        else
+        {
+            tictac = !tictac;
+            SoundManagerScript.PlaySound("Walk2");
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D col)
     {
         
@@ -189,6 +209,14 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.tag == "enemy" && isAlive)
+        {
+            srender.color = Color.black;
+            GameController.Instance.PlayerLost();
+        }
+    }
     // GANHOU
     private void OnTriggerEnter2D(Collider2D collision)
     { 
@@ -197,13 +225,10 @@ public class PlayerController : MonoBehaviour
         {
             GameController.Instance.PlayerWon();  
         }
-
-       
-        if (collision.transform.tag == "collectable" && isAlive)
+        if (collision.transform.tag == "enemy" && isAlive)
         {
-            Debug.Log("pegou gotinha hmmmm :9");
-            collision.gameObject.SetActive(false);
-            GameController.Instance.GetGota();
+            srender.color = Color.black;
+            GameController.Instance.PlayerLost();
         }
     }
 
