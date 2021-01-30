@@ -10,7 +10,7 @@ public class inimigoAnda : MonoBehaviour
     void Start()
     {
         rbody = gameObject.GetComponent<Rigidbody2D>();
-        dir = Random.Range(-1, 1);
+
     }
     void Update()
     {
@@ -26,7 +26,7 @@ public class inimigoAnda : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.transform.tag == "wall")
+        if (col.transform.tag == "wall" || col.transform.tag == "enemy")
         {
             dir = -dir;
         }
