@@ -14,7 +14,7 @@ public class inimigoAnda : MonoBehaviour
     }
     void Update()
     {
-        if (dir == 0) dir = 1;
+        
     }
     private void FixedUpdate()
     {
@@ -27,6 +27,13 @@ public class inimigoAnda : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.transform.tag == "wall" || col.transform.tag == "enemy")
+        {
+            dir = -dir;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "victory")
         {
             dir = -dir;
         }
