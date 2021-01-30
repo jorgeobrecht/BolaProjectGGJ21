@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
     }
+
     private void OnCollisionStay2D(Collision2D col)
     {
         if(col.transform.tag == "ground")

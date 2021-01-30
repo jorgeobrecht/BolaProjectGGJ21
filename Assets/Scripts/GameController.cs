@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
     public static bool isPlaying;
     public static bool isDead;
     public static bool isPaused;
+    public GameObject pauseMenu;
 
     public static void PlayerWon()
     {
@@ -33,20 +34,21 @@ using UnityEngine.SceneManagement;
         winCount = 0;
     }
 
-    public static void Pause()
+    public void Pause()
     {
         Debug.Log("pause");
         if (isPaused) {
             Time.timeScale = 1f;
             isPaused = false;
+            pauseMenu.SetActive(false);
         }
             
         else
         {
-            isPaused = true;
             Time.timeScale = 0f;
+            isPaused = true;
+            pauseMenu.SetActive(true);
         }
-            
     }
 
     // Update is called once per frame
@@ -55,6 +57,7 @@ using UnityEngine.SceneManagement;
         if (Input.GetKeyDown("escape"))
         {
             Pause();
+            
         }
     }
 }
