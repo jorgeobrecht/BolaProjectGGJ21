@@ -19,15 +19,25 @@ using UnityEngine.SceneManagement;
 
     
 
-    private static IEnumerator Restart()
+    private static IEnumerator waitRestart()
     {
         Debug.Log("Espera 2 seg...");
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
         Debug.Log("vai");
+        Instance.Restart();
     }
 
-    
+    public void Restart()
+    {
+        Time.timeScale = 1f; // caso seja chamado do menu pausado
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitApplication()
+    {
+        Debug.Log("quit placeholder");
+    }
 
     public void PlayerWon()
     {
@@ -42,9 +52,6 @@ using UnityEngine.SceneManagement;
         Debug.Log("Player lost");
         player.isAlive = false;
         gameOverScreen.SetActive(true);
-        coroutine = Restart();
-        StartCoroutine(coroutine);
-        
     }
 
     // Start is called before the first frame update
