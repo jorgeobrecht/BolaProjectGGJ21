@@ -18,8 +18,12 @@ public class follow : MonoBehaviour
     void FixedUpdate()
     {
         v.x = bola.position.x;
+<<<<<<< HEAD
         v.y = bola.position.y+6;
         //transform.LookAt(bola);
+=======
+        v.y = bola.position.y;
+>>>>>>> 1f7f6f415a4b37eefe661457f19c2b7ac8bac879
         transform.position = v;
     }
 }
