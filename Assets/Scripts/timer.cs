@@ -7,29 +7,28 @@ public class timer : MonoBehaviour
     
 {
 
-    public float limit=5f;
-    public Vector3 anglestoRotate;
+
     int interval = 1;
-    float nextTime = 0;
+    public float nextTime = 0;
 
+    private timeLimit timelimit;
 
+    float timeLimit;
 
     // Start is called before the first frame update
     void Start()
     {
+        timelimit = GameObject.Find("Ponteiro").GetComponent<timeLimit>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time >= nextTime) {
+        
+             
+            this.transform.Rotate(0, 0, (-360/timelimit.limit)*Time.deltaTime);
             
-            this.transform.Rotate(0, 0, 360/limit);
-
-            nextTime += interval;
-
-        }
         
 ;    }
 }
