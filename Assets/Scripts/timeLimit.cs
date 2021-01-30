@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 public class timeLimit : MonoBehaviour
 {
 
-    public float limit = 5.0f;
+    public float limit;
 
 
     private void Update()
     {
+
+        this.transform.Rotate(0, 0, (-360 / limit) * Time.deltaTime);
         if (Time.timeSinceLevelLoad > limit)
         {
-            GameController.PlayerLost();
+            GameController.Instance.PlayerLost();
 
         }
 

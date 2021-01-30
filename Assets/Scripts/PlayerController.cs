@@ -181,9 +181,8 @@ public class PlayerController : MonoBehaviour
         //check colisão com inimigo
         if(col.transform.tag == "enemy" && isAlive)
         {
-            Debug.Log("perdeu");
             srender.color = Color.black;
-            isAlive = false;
+            GameController.Instance.PlayerLost();
         }
 
 
@@ -194,7 +193,7 @@ public class PlayerController : MonoBehaviour
         //check de vitoria
         if (collision.transform.tag == "victory" && isAlive)
         {
-            GameController.PlayerWon();  
+            GameController.Instance.PlayerWon();  
         }
     }
 

@@ -19,8 +19,7 @@ public class follow : MonoBehaviour
     {
         v.x = bola.position.x;
 
-        v.y = bola.position.y+6;
-        v.y = bola.position.y;
+        //v.y = bola.position.y+6;
 
         transform.position = v;
     }
