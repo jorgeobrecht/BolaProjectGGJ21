@@ -248,11 +248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 0
-=======
-  m_IsActive: 1
->>>>>>> 0c870e6d26bb270aa42553275983df96ae255a4d
 --- !u!114 &72776855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,11 +1211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306714604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: -44.79, y: 3.454361, z: 0}
-=======
-  m_LocalPosition: {x: 11.9, y: 3.454361, z: 0}
->>>>>>> 0c870e6d26bb270aa42553275983df96ae255a4d
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1288,7 +1280,6 @@ MonoBehaviour:
   maxSpeed: 20
   speed: 1
   grounded: 0
-<<<<<<< HEAD
   jumpForce: 25
   fallWeight: 10
   isAlive: 0
@@ -1465,8 +1456,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698965692}
   m_CullTransparentMesh: 0
-=======
-  jumpForce: 900
-  fallWeight: 3
-  isAlive: 0
->>>>>>> 0c870e6d26bb270aa42553275983df96ae255a4d

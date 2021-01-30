@@ -6,7 +6,7 @@ public class bola : MonoBehaviour
 {
     private Rigidbody2D rbody;
     private SpriteRenderer srender;
-    private Vector3 dir;
+    private float dir;
     public float acel;
     public float maxSpeed;
     public float speed;
@@ -28,12 +28,34 @@ public class bola : MonoBehaviour
     void getInput()
     {
 
-        dir = Input.GetAxisRaw("Horizontal");
+        Vector3 pos = transform.position;
+
+        if (Input.GetKey("w"))
+        {
+            pos.z += speed * Time.deltaTime;
+        }
+        if (Input.GetKey("s"))
+        {
+            pos.z -= speed * Time.deltaTime;
+        }
+        if (Input.GetKey("d"))
+        {
+            pos.x += speed * Time.deltaTime;
+        }
+        if (Input.GetKey("a"))
+        {
+            pos.x -= speed * Time.deltaTime;
+        }
+
+
+        transform.position = pos;
+
         if (Input.GetKeyDown("space"))
         {
             jump = true;
         }
     }
+
     void Update()
     {
         if(isAlive)
@@ -45,9 +67,8 @@ public class bola : MonoBehaviour
     {
         //lados
         speed = rbody.velocity.x;
-        transform.position += dir;
-        //if (Mathf.Abs(speed) < maxSpeed)
-        //    rbody.AddForce(new Vector2(dir * acel, 0), ForceMode2D.Impulse);
+        if (Mathf.Abs(speed) < maxSpeed)
+            rbody.AddForce(new Vector2(dir * acel, 0), ForceMode2D.Impulse);
 
         //if (Mathf.Abs(speed) == maxSpeed) Debug.Log("max");
 
