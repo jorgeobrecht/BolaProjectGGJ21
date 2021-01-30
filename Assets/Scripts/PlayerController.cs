@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     //objetos
     private Rigidbody2D rbody;
     private SpriteRenderer srender;
-    private Animator anim;
+    public Animator anim;
     //movimento
     private float dir;
     public float speed;
@@ -25,9 +25,12 @@ public class PlayerController : MonoBehaviour
     //combate
     private bool attack = false;
     private bool canMove = true;
-    private bool Block = false;
+    private bool block = false;
+    public float blockCd;
+    private float lastShield;
     //info jogo
     public bool isAlive;
+    private bool tictac = false;
 
 
 
@@ -39,6 +42,7 @@ public class PlayerController : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         rbody.gravityScale = gScale;
         isAlive = true;
+        lastShield = -2*blockCd;
     }
     void Update()
     {
@@ -46,6 +50,7 @@ public class PlayerController : MonoBehaviour
             getInput();
         AttackControl();
         BlockControl();
+        AnimationControl();
 
     }
 
@@ -71,13 +76,19 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                hovering = false;
                 jumpDown = false;
+                anim.SetBool("float", false );
             }
             //info ataque
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 attack = true;
                 Debug.Log("ataquei");
+            }
+            if (Input.GetKeyDown(KeyCode.X) && (Time.time - lastShield) > blockCd)
+            {
+                block = true;
             }
         }
     }
@@ -99,12 +110,17 @@ public class PlayerController : MonoBehaviour
                 rbody.velocity = (new Vector2(rbody.velocity.x, jumpForce));
                 grounded = false;
                 jump = false;
+                anim.SetTrigger("jump");
+                SoundManagerScript.PlaySound("Jump");
             }
             else if(!grounded && hover)
             {
                 rbody.velocity = (new Vector2(rbody.velocity.x, jumpForce));
                 hover = false;
                 hovering = true;
+                anim.SetBool("float", true);
+                anim.SetTrigger("jump");
+                SoundManagerScript.PlaySound("OpenFloat");
             }
         }
         if(hovering && jumpDown && rbody.velocity.y < 0)
@@ -121,13 +137,66 @@ public class PlayerController : MonoBehaviour
     {
         if (attack)
         {
-
+            anim.SetTrigger("attack");
+            SoundManagerScript.PlaySound("OpenFloat");
+            attack = false;
         }
+    }
+    public void Freeze()
+    {
+        dir = 0;
+        canMove = false;
+        
     }
     private void BlockControl()
     {
 
+        if (block && (Time.time - lastShield) > blockCd )
+        {
+            lastShield = Time.time;
+            anim.SetTrigger("block");
+            SoundManagerScript.PlaySound("Attack");
+            block = false;
+        }
+        //mostrar cooldown
+        if(lastShield + blockCd > Time.time)
+        {
+
+        }
     }
+    public void Move()
+    {
+        canMove = true;
+    }
+    private void AnimationControl()
+    {
+        //animação de andar
+        if(grounded && dir != 0)
+        {
+            anim.SetBool("walking", true);
+            
+        }
+        else
+        {
+            anim.SetBool("walking", false);
+
+        }
+    }
+    
+    public void WalkSound()
+    {
+        if(tictac)
+        {
+            tictac = !tictac;
+            SoundManagerScript.PlaySound("Walk1");
+        }
+        else
+        {
+            tictac = !tictac;
+            SoundManagerScript.PlaySound("Walk2");
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D col)
     {
         
@@ -140,11 +209,19 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.tag == "enemy" && isAlive)
+        {
+            srender.color = Color.black;
+            GameController.Instance.PlayerLost();
+        }
+    }
     // GANHOU
     private void OnTriggerEnter2D(Collider2D collision)
     { 
         //check de vitoria
-        if (collision.transform.tag == "victory")
+        if (collision.transform.tag == "victory" && isAlive)
         {
             GameController.Instance.PlayerWon();  
         }
