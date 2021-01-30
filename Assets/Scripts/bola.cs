@@ -6,7 +6,7 @@ public class bola : MonoBehaviour
 {
     private Rigidbody2D rbody;
     private SpriteRenderer srender;
-    private float dir;
+    private Vector3 dir;
     public float acel;
     public float maxSpeed;
     public float speed;
@@ -15,36 +15,46 @@ public class bola : MonoBehaviour
     public float jumpForce ;
     public float fallWeight = 10;
     public bool isAlive;
+
+
+
     void Start()
     {
         rbody = gameObject.GetComponent<Rigidbody2D>();
         srender = gameObject.GetComponent<SpriteRenderer>();
         isAlive = true;
     }
-    void Update()
+
+    void getInput()
     {
+
         dir = Input.GetAxisRaw("Horizontal");
-        if(Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space"))
         {
             jump = true;
         }
+    }
+    void Update()
+    {
+        if(isAlive)
+            getInput();
 
     }
 
     private void MovePlayer()
     {
         //lados
-        
         speed = rbody.velocity.x;
-        if (Mathf.Abs(speed) < maxSpeed)
-            rbody.AddForce(new Vector2(dir * acel, 0));
+        transform.position += dir;
+        //if (Mathf.Abs(speed) < maxSpeed)
+        //    rbody.AddForce(new Vector2(dir * acel, 0), ForceMode2D.Impulse);
 
-        if (Mathf.Abs(speed) == maxSpeed) Debug.Log("max");
+        //if (Mathf.Abs(speed) == maxSpeed) Debug.Log("max");
 
         //pulo
         if (jump && grounded)
         {
-            rbody.AddForce(new Vector2(0, jumpForce));
+            rbody.AddForce(new Vector2(0, jumpForce),ForceMode2D.Impulse);
             grounded = false;
             jump = false;
         }
@@ -52,7 +62,7 @@ public class bola : MonoBehaviour
         {
             if(rbody.velocity.y <= 0)
             {
-                rbody.AddForce(new Vector2(0,-fallWeight));
+                rbody.AddForce(new Vector2(0,-fallWeight),ForceMode2D.Impulse);
             }
         }
     }
@@ -70,7 +80,6 @@ public class bola : MonoBehaviour
         if(col.transform.tag == "enemy" && isAlive)
         {
             Debug.Log("perdeu");
-            acel = 0;
             srender.color = Color.black;
             isAlive = false;
         }
