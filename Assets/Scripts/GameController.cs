@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
  public class GameController : MonoBehaviour
 {
     private static GameController _instance;
     public static GameController Instance { get { return _instance; } }
-    public static int winCount;
     public static bool isPlaying;
     public static bool isDead;
     public static bool isPaused;
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
     public GameObject victoryScreen;
-
     public PlayerController player;
     private static IEnumerator coroutine;
+    public HUD ui;
+
+    //collectables
+    GameObject[] gotas;
+    public int playerGotas;
+    public int maxGotas;
 
 
-    
 
     private static IEnumerator waitRestart()
     {
@@ -58,11 +62,13 @@ using UnityEngine.SceneManagement;
     }
 
     // Start is called before the first frame update
-    void Start()
+    
+
+    public void GetGota()
     {
-        isPlaying = true;
-        isPaused = false;
-        winCount = 0;
+        gotas = GameObject.FindGameObjectsWithTag("collectable");
+        playerGotas = maxGotas - gotas.Length;
+        ui.updateGotasCounter(playerGotas);
     }
 
     public void Pause()
@@ -97,14 +103,27 @@ using UnityEngine.SceneManagement;
     }
 
 
-// Update is called once per frame
-void Update()
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        isPlaying = true;
+        isPaused = false;
+        gotas = GameObject.FindGameObjectsWithTag("collectable");
+        maxGotas = gotas.Length;
+        playerGotas = maxGotas - gotas.Length;
+    }
+
+
+
+    // Update is called once per frame
+    void Update()
     {
         if (Input.GetKeyDown("escape"))
         {
             Pause();
-            
         }
+        
     }
 }
     

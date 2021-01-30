@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private float lastShield;
     //info jogo
     public bool isAlive;
+    
 
 
 
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         rbody.gravityScale = gScale;
         isAlive = true;
+        
         lastShield = -2*blockCd;
     }
     void Update()
@@ -194,6 +196,14 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.tag == "victory" && isAlive)
         {
             GameController.Instance.PlayerWon();  
+        }
+
+       
+        if (collision.transform.tag == "collectable" && isAlive)
+        {
+            Debug.Log("pegou gotinha hmmmm :9");
+            collision.gameObject.SetActive(false);
+            GameController.Instance.GetGota();
         }
     }
 
