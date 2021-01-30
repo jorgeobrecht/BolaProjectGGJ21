@@ -8,6 +8,7 @@ TagManager:
   - wall
   - enemy
   - victory
+  - ataque
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - Enemy
   - Projetil
-  - 
+  - combate
   - 
   - 
   - 
