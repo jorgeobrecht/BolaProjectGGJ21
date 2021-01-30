@@ -5,6 +5,7 @@ using UnityEngine;
 public class bola : MonoBehaviour
 {
     private Rigidbody2D rbody;
+    private SpriteRenderer srender;
     private float dir;
     public float acel;
     public float maxSpeed;
@@ -13,9 +14,12 @@ public class bola : MonoBehaviour
     public bool grounded = false;
     public float jumpForce ;
     public float fallWeight = 10;
+    public bool isAlive;
     void Start()
     {
         rbody = gameObject.GetComponent<Rigidbody2D>();
+        srender = gameObject.GetComponent<SpriteRenderer>();
+        isAlive = true;
     }
     void Update()
     {
@@ -63,6 +67,13 @@ public class bola : MonoBehaviour
         {
             grounded = true;
         }
+        if(col.transform.tag == "enemy" && isAlive)
+        {
+            Debug.Log("perdeu");
+            acel = 0;
+            srender.color = Color.black;
+            isAlive = false;
+        }
 
     }
     private void OnCollisionExit2D(Collision2D col)
@@ -71,5 +82,6 @@ public class bola : MonoBehaviour
         {
             grounded = false;
         }
+        
     }
 }
