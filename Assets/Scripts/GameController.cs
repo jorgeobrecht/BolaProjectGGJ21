@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
     public static int winCount;
     public static bool isPlaying;
     public static bool isDead;
+    public static bool isPaused;
 
     public static void PlayerWon()
     {
@@ -25,15 +26,36 @@ using UnityEngine.SceneManagement;
     }
 
     // Start is called before the first frame update
-    static void Start()
+    void Start()
     {
         isPlaying = true;
+        isPaused = false;
         winCount = 0;
     }
 
-    // Update is called once per frame
-    static void Update()
+    public static void Pause()
     {
-        
+        Debug.Log("pause");
+        if (isPaused) {
+            Time.timeScale = 1f;
+            isPaused = false;
+        }
+            
+        else
+        {
+            isPaused = true;
+            Time.timeScale = 0f;
+        }
+            
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown("escape"))
+        {
+            Pause();
+        }
     }
 }
+    

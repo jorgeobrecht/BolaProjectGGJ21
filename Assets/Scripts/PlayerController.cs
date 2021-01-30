@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             jump = true;
         }
+            
     }
 
     void Update()
@@ -94,8 +95,7 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.tag == "victory")
         {
             GameController.PlayerWon();
-            
-            
+                       
         }
     }
 
