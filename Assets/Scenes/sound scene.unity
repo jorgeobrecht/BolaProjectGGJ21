@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847d0d52e2684ac4bb5193a95d63b0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tdsGotas: {fileID: 0}
   pauseMenu: {fileID: 927963220}
   gameOverScreen: {fileID: 208043501}
   victoryScreen: {fileID: 0}
@@ -599,6 +600,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914869361358708271, guid: f0223523215ee0c41b10f28321018c04,
+        type: 3}
+      propertyPath: vida
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914869361358708271, guid: f0223523215ee0c41b10f28321018c04,
+        type: 3}
+      propertyPath: BackX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914869361358708271, guid: f0223523215ee0c41b10f28321018c04,
+        type: 3}
+      propertyPath: BackY
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0223523215ee0c41b10f28321018c04, type: 3}
