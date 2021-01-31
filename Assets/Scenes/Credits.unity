@@ -153,10 +153,10 @@ RectTransform:
   m_Father: {fileID: 640478893}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -789.69995}
-  m_SizeDelta: {x: 950.69, y: 1579.3999}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -1250}
+  m_SizeDelta: {x: 950.69, y: 1579.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678233
 MonoBehaviour:
@@ -178,7 +178,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 43
     m_FontStyle: 0
     m_BestFit: 0
@@ -190,7 +190,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "Game Design\n\n\t\t\t\tGabriel Medeiros\n\t\t \t\tBruno Machado\n\t\t\t\tLucas
+    Roza\n\n\n\nProgramming\n\n\t\t\t\tLeonardo Santiago\n\t\t\t\tJorge Obrecht\n\t\t\t\tBruno
+    Machado\n\n\n\nArt\n\n\t\t\t\tDaniel Rolo\n\t\n\n\nProject Management\n\n\t\t\t\tGabriel
+    Medeiros\n\t\t\t\tLucas Roza\n\n\n\nSoundtrack and Sound Design\n\t\n\t\t\t\tDaniel
+    Moreno\n\n"
 --- !u!222 &1678234
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -585,3 +589,4 @@ MonoBehaviour:
   parentCanvas: {fileID: 640478893}
   creditos: {fileID: 1678231}
   altura: 500
+  textao: {fileID: 0}

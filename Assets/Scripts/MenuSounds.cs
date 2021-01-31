@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class MenuSounds : MonoBehaviour
 {
-    int n = 0;
+  
     
 
     public void EnterSound()
     {
-        
-        SoundManagerScript.PlaySound("MenuCursor" + ((n+1)%3+1));
-        Debug.Log("aasdfas");
+        //n = (int)Random.Range(0, 3);
+        //Debug.Log(n);
+        //if (n != 0)
+        //    SoundManagerScript.PlaySound("MenuCursor" + n);
+        //else
+        //    SoundManagerScript.PlaySound("MenuCursor");
+        ////SoundManagerScript.PlaySound("Attack");
+        //Debug.Log(n);
         
     }
 }

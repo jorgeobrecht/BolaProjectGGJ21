@@ -566,28 +566,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-    Controls:
-
-    Movement : Arrows
-
-    Jump / double jump:  z / Spacebar
-
-    Hold
-    double jump to hover
-
-    Attack: X
-
-    block: C
-
-    pause: esc
-
-
-
-
-    press
-    any key to play!'
+  m_text: "\nControls:\nMovement : Arrows\nJump / double jump:  z / Spacebar\nHold
+    double jump to hover\nAttack: X\nblock: C\npause: esc\n\n\t\t\tpress any key
+    to play!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a7d226da584f59a4ba05f623750b21fd, type: 2}
   m_sharedMaterial: {fileID: 8063359657052751004, guid: a7d226da584f59a4ba05f623750b21fd,
