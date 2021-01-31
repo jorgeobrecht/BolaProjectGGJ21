@@ -17,6 +17,7 @@ using UnityEngine.UI;
     public GameObject victoryScreen;
     public PlayerController player;
     private static IEnumerator coroutine;
+    public string sceneName;
     public HUD ui;
 
     //collectables
@@ -38,13 +39,13 @@ using UnityEngine.UI;
     public void Restart()
     {
         Time.timeScale = 1f; // caso seja chamado do menu pausado
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitToStartMenu()
     {
         Time.timeScale = 1f; // caso seja chamado do menu pausado
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("startMenu");
     }
 
     public void PlayerWon()

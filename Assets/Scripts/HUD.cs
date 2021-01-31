@@ -9,6 +9,7 @@ public class HUD : MonoBehaviour
     public PlayerController player;
     public Text gotas;
     public Text vida;
+    public int maxVida;
 
     public void updateGotasCounter(int n)
     {
@@ -20,13 +21,13 @@ public class HUD : MonoBehaviour
     void Start()
     {
         gotas.text = "gotinhass: " + GameController.Instance.playerGotas + "/" + GameController.Instance.maxGotas; 
-        vida.text = "vidas: " + player.vida + "/ 10";
+        vida.text = "vidas: " + player.vida + "/" + maxVida;
         
     }
 
     void Update()
     {
-        vida.text = "vidas: " + player.vida + "/ 10";
+        vida.text = "vidas: " + player.vida + "/" + maxVida ;
     }
 
 }
