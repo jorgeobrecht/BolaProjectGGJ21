@@ -213,7 +213,6 @@ public class PlayerController : MonoBehaviour
         //check colisão com inimigo
         if(col.transform.tag == "enemy" && isAlive)
         {
-            srender.color = Color.black;
             GameController.Instance.PlayerLost();
         }
 
@@ -223,7 +222,6 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.tag == "enemy" && isAlive)
         {
-            srender.color = Color.black;
             GameController.Instance.PlayerLost();
         }
     }
@@ -238,8 +236,6 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.tag == "enemy" && isAlive)
         {
             vida--;
-
-            srender.color = Color.black;
             GameController.Instance.PlayerLost();
         }
         if (collision.transform.tag == "collectable" && isAlive)
