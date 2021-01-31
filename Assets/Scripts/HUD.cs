@@ -13,21 +13,21 @@ public class HUD : MonoBehaviour
 
     public void updateGotasCounter(int n)
     {
-        gotas.text = "gotinhass: " + n + "/" + GameController.Instance.maxGotas;
+        gotas.text = ":  " + n + "/" + GameController.Instance.maxGotas;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        gotas.text = "gotinhass: " + GameController.Instance.playerGotas + "/" + GameController.Instance.maxGotas; 
-        vida.text = "vidas: " + player.vida + "/" + maxVida;
+        gotas.text = ":  " + GameController.Instance.playerGotas + "/" + GameController.Instance.maxGotas; 
+        vida.text = ":  " + player.vida + "/" + maxVida;
         
     }
 
     void Update()
     {
-        vida.text = "vidas: " + player.vida + "/" + maxVida ;
+        vida.text = ":  " + player.vida + "/" + maxVida ;
     }
 
 }

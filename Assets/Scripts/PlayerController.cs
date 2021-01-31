@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     Renderer rend;
     Color c;
 
-
+    
     #region START, UPDATE e FIXED UPDATE
     void Start()
     {

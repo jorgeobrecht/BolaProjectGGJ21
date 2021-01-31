@@ -9,7 +9,7 @@ public class StartMenu : MonoBehaviour
     
     public void LoadLevel()
     {
-        SceneManager.LoadScene("TesteLeo");
+        SceneManager.LoadScene("Main Level");
     }
 
     public void LoadCredits()

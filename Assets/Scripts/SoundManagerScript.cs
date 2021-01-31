@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip WalkSound1, WalkSound2, JumpSound, OpenFloatSound, DamageSound, DefenseSound, CollectableSound, FloatSound1, FloatSound2, AttackSound, DeathSound, VictorySound, OpenMenuSound, MenuCursorSound1, MenuCursorSound2, MenuCursorSound3;
+    public static AudioClip WalkSound1, WalkSound2, JumpSound, KillSound, OpenFloatSound, DamageSound, DefenseSound, CollectableSound, FloatSound1, FloatSound2, AttackSound, DeathSound, VictorySound, OpenMenuSound, MenuCursorSound1, MenuCursorSound2, MenuCursorSound3;
     static AudioSource audioSrc;
         
     // Start is called before the first frame update
@@ -26,6 +26,7 @@ public class SoundManagerScript : MonoBehaviour
         MenuCursorSound1 = Resources.Load<AudioClip>("menu cursor 1 (new)");
         MenuCursorSound2 = Resources.Load<AudioClip>("menu cursor 2 (new)");
         MenuCursorSound3 = Resources.Load<AudioClip>("menu cursor 3 (new)");
+        KillSound = Resources.Load<AudioClip>("kill");
 
         audioSrc = GetComponent<AudioSource> ();
     }
@@ -39,6 +40,9 @@ public class SoundManagerScript : MonoBehaviour
         switch (clip){
             case "Walk1":
                 audioSrc.PlayOneShot(WalkSound1);
+                break;
+            case "kill":
+                audioSrc.PlayOneShot(KillSound);
                 break;
             case "Jump":
                 audioSrc.PlayOneShot(JumpSound);

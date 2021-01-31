@@ -136,7 +136,6 @@ using UnityEngine.UI;
             Pause();
         }
         
-        
     }
 }
     
