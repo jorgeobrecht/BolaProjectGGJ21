@@ -19,7 +19,7 @@ public class StartMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Fecha o Programa");
+        Application.Quit();
     }
 
 }
