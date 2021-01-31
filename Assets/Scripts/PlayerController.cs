@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -28,6 +29,10 @@ public class PlayerController : MonoBehaviour
     private bool block = false;
     public float blockCd;
     private float lastShield;
+    public float invTime;
+    public float BackX;
+    public float BackY;
+    private float BDir;
     //info jogo
     public bool isAlive;
     private bool tictac = false;
@@ -102,33 +107,35 @@ public class PlayerController : MonoBehaviour
     }
     private void MovePlayer()
     {
-
-        //movimento
-        rbody.velocity = new Vector2(dir * speed, rbody.velocity.y);
-        //FLIP
-        if(dir != transform.localScale.x && dir != 0)
+        if (canMove)
         {
-            transform.localScale = new Vector2(dir, 1);
-        }
-        //pulo
-        if (jump)
-        {
-            if (grounded)
+            //movimento
+            rbody.velocity = new Vector2(dir * speed, rbody.velocity.y);
+            //FLIP
+            if (dir != transform.localScale.x && dir != 0)
             {
-                rbody.velocity = (new Vector2(rbody.velocity.x, jumpForce));
-                grounded = false;
-                jump = false;
-                anim.SetTrigger("jump");
-                SoundManagerScript.PlaySound("Jump");
+                transform.localScale = new Vector2(dir, 1);
             }
-            else if(!grounded && hover)
+            //pulo
+            if (jump)
             {
-                rbody.velocity = (new Vector2(rbody.velocity.x, jumpForce));
-                hover = false;
-                hovering = true;
-                anim.SetBool("float", true);
-                anim.SetTrigger("jump");
-                SoundManagerScript.PlaySound("OpenFloat");
+                if (grounded)
+                {
+                    rbody.velocity = (new Vector2(rbody.velocity.x, jumpForce));
+                    grounded = false;
+                    jump = false;
+                    anim.SetTrigger("jump");
+                    SoundManagerScript.PlaySound("Jump");
+                }
+                else if (!grounded && hover)
+                {
+                    rbody.velocity = (new Vector2(rbody.velocity.x, jumpForce));
+                    hover = false;
+                    hovering = true;
+                    anim.SetBool("float", true);
+                    anim.SetTrigger("jump");
+                    SoundManagerScript.PlaySound("OpenFloat");
+                }
             }
         }
         if(hovering && jumpDown && rbody.velocity.y < 0)
@@ -212,37 +219,22 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region COLLISIONS
-    private void OnCollisionStay2D(Collision2D col)
+    /*private void OnCollisionStay2D(Collision2D col)
     {        
         //check colisão com inimigo
         if(col.transform.tag == "enemy" )
         {
-            vida-=1;
-            if (vida == 0 && isAlive)
-            {
-                GameController.Instance.PlayerLost();
-            }
-            if (vida >= 1)
-            {
-                StartCoroutine("GetInvulnerable");
-            }
+           Dano();
         }
 
 
-    }
+    }*/
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.transform.tag == "enemy")
         {
-            vida-=1;
-            if (vida == 0 && isAlive)
-            {
-                GameController.Instance.PlayerLost();
-            }
-            if (vida >= 1)
-            {
-                StartCoroutine("GetInvulnerable");
-            }
+            BDir = Math.Sign(transform.position.x - col.transform.position.x);
+            Dano();
         }
     }
     // GANHOU
@@ -255,16 +247,8 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.transform.tag == "enemy")
         {
-            vida-=1;
-            Debug.Log(vida);
-            if (vida == 0 && isAlive)
-            {
-                GameController.Instance.PlayerLost();
-            }
-            if (vida >= 1)
-            {
-                StartCoroutine("GetInvulnerable");
-            }
+            BDir = Math.Sign(transform.position.x - collision.transform.position.x);
+            Dano();
         }
         if (collision.transform.tag == "collectable" && isAlive)
         {
@@ -272,16 +256,36 @@ public class PlayerController : MonoBehaviour
             GameController.Instance.GetGota();
         }
     }
+    private void Dano()
+    {
+        vida -= 1;
+        if (vida == 0 && isAlive)
+        {
+            GameController.Instance.PlayerLost();
+        }
+        if (vida >= 1)
+        {
+            StartCoroutine("GetInvulnerable");
+            canMove = false;
+            rbody.velocity = new Vector2(BackX * BDir, BackY);
+        }
+    }
 
     IEnumerator GetInvulnerable()
     {
-        Physics2D.IgnoreLayerCollision(8, 9, true);
+        Physics2D.IgnoreLayerCollision(0, 8, true);
+        Physics2D.IgnoreLayerCollision(0, 9, true);
         c.a = 0.5f;
         rend.material.color = c;
-        yield return new WaitForSeconds(3f);
-        Physics2D.IgnoreLayerCollision(8, 9, false);
+        yield return new WaitForSeconds(0.5f);
+        canMove = true;
+        yield return new WaitForSeconds(invTime);
+
+        Physics2D.IgnoreLayerCollision(0, 8, false);
+        Physics2D.IgnoreLayerCollision(0, 9, false);
         c.a = 1f;
         rend.material.color = c;
+
     }
     #endregion
 

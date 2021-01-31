@@ -234,7 +234,11 @@ MonoBehaviour:
   gScale: 5
   hoverGrav: 0.5
   blockCd: 4
+  invTime: 3
+  BackX: 10
+  BackY: 10
   isAlive: 0
+  vida: 3
 --- !u!1 &1315403385087663695
 GameObject:
   m_ObjectHideFlags: 0
