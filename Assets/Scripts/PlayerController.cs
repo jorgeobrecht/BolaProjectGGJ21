@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Freeze()
     {
-        dir = 0;
+        rbody.velocity = new Vector2(0, rbody.velocity.y);
         canMove = false;
         
     }
