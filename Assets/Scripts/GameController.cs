@@ -18,7 +18,7 @@ using UnityEngine.UI;
     public PlayerController player;
     private static IEnumerator coroutine;
     public string sceneName;
-    //public HUD hudManager;
+    public HUD hudManager;
 
     //collectables
     GameObject[] gotas;
@@ -77,6 +77,7 @@ using UnityEngine.UI;
     {
         gotas = GameObject.FindGameObjectsWithTag("collectable");
         playerGotas = maxGotas - gotas.Length;
+        hudManager.updateGotasCounter(playerGotas);
     }
 
     public void Pause()

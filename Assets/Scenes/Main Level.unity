@@ -1972,7 +1972,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hudManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2116083259}
     - target: {fileID: 8523857434133889521, guid: be4441b9e8efd12438ecb813a8e5332d,
         type: 3}
       propertyPath: victoryScreen
@@ -2848,7 +2848,7 @@ PrefabInstance:
     - target: {fileID: 6859662274671139117, guid: b794f93082cce3d44a8bda72a524fad3,
         type: 3}
       propertyPath: m_Text
-      value: 'Vida:'
+      value: '      :'
       objectReference: {fileID: 0}
     - target: {fileID: 6859662274671139117, guid: b794f93082cce3d44a8bda72a524fad3,
         type: 3}
@@ -2859,7 +2859,7 @@ PrefabInstance:
     - target: {fileID: 6859662276028433321, guid: b794f93082cce3d44a8bda72a524fad3,
         type: 3}
       propertyPath: m_Text
-      value: 'Gotas:'
+      value: '      :'
       objectReference: {fileID: 0}
     - target: {fileID: 6859662276028433321, guid: b794f93082cce3d44a8bda72a524fad3,
         type: 3}
