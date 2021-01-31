@@ -49,11 +49,13 @@ public class inimigoAnda : MonoBehaviour
         }
         if (collision.tag == "ataque")
         {
+            
             Morto();
         }
     }
     private void Morto()
     {
+        Debug.Log("boy");
         vivo = false;
         speed = 0;
         transform.localScale = new Vector3(1, -1, 1);
