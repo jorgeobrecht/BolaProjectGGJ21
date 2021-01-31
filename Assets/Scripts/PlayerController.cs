@@ -236,6 +236,11 @@ public class PlayerController : MonoBehaviour
             BDir = Math.Sign(transform.position.x - col.transform.position.x);
             Dano();
         }
+        if(col.transform.tag == "death")
+        {
+            vida = 0;
+            GameController.Instance.PlayerLost();
+        }
     }
     // GANHOU
     private void OnTriggerEnter2D(Collider2D collision)

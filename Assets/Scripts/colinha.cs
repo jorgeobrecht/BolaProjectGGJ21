@@ -9,6 +9,7 @@ public class colinha : MonoBehaviour
     public float cooldown;
     public float lastTiro=0;
     private BoxCollider2D colid;
+    private bool achei = false;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class colinha : MonoBehaviour
     }
     public void atirarCola()
     {
-        if (vivo)
+        if (vivo && achei)
         {
             GameObject c = Instantiate(colaPrefab) as GameObject;
             c.transform.position = transform.position;
@@ -44,6 +45,17 @@ public class colinha : MonoBehaviour
             Debug.Log("ai");
             Morto();
             Destroy(gameObject);
+        }
+        if(collision.tag == "Player")
+        {
+            achei = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            achei = false; ;
         }
     }
 }
