@@ -29,7 +29,7 @@ public class GroundCheck : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        SoundManagerScript.PlaySound("Walk2");
+        //SoundManagerScript.PlaySound("Walk2");
     }
 
         private void OnTriggerExit2D(Collider2D col)
