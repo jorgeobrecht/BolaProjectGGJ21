@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip WalkSound1, WalkSound2, JumpSound, OpenFloatSound, FloatSound1, FloatSound2, AttackSound, DeathSound, VictorySound, OpenMenuSound, MenuCursorSound1, MenuCursorSound2, MenuCursorSound3;
+    public static AudioClip WalkSound1, WalkSound2, JumpSound, OpenFloatSound, DamageSound, DefenseSound, CollectableSound, FloatSound1, FloatSound2, AttackSound, DeathSound, VictorySound, OpenMenuSound, MenuCursorSound1, MenuCursorSound2, MenuCursorSound3;
     static AudioSource audioSrc;
         
     // Start is called before the first frame update
@@ -16,10 +16,13 @@ public class SoundManagerScript : MonoBehaviour
         OpenFloatSound = Resources.Load<AudioClip>("open float (new)");
         FloatSound1 = Resources.Load<AudioClip>("floating 1 (new)");
         FloatSound2 = Resources.Load<AudioClip>("floating 2 (new)");
-        AttackSound = Resources.Load<AudioClip>("Schlap (new)");
+        AttackSound = Resources.Load<AudioClip>("Schlap novo");
         DeathSound = Resources.Load<AudioClip>("death sound (new)");
         VictorySound = Resources.Load<AudioClip>("victory jingle (new)");
         OpenMenuSound = Resources.Load<AudioClip>("start (new)");
+        DamageSound = Resources.Load<AudioClip>("damage");
+        DefenseSound = Resources.Load<AudioClip>("defense");
+        CollectableSound = Resources.Load<AudioClip>("collectable");
         MenuCursorSound1 = Resources.Load<AudioClip>("menu cursor 1 (new)");
         MenuCursorSound2 = Resources.Load<AudioClip>("menu cursor 2 (new)");
         MenuCursorSound3 = Resources.Load<AudioClip>("menu cursor 3 (new)");
@@ -39,6 +42,15 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "Jump":
                 audioSrc.PlayOneShot(JumpSound);
+                break;
+            case "damage":
+                audioSrc.PlayOneShot(DamageSound);
+                break;
+            case "defense":
+                audioSrc.PlayOneShot(DefenseSound);
+                break;
+            case "collectable":
+                audioSrc.PlayOneShot(CollectableSound);
                 break;
             case "OpenFloat":
                 audioSrc.PlayOneShot(OpenFloatSound);
