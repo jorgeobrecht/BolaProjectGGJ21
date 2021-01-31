@@ -79,11 +79,11 @@ public class PlayerController : MonoBehaviour
         {
             //info movimento
             dir = (Input.GetAxisRaw("Horizontal"));
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space")|| Input.GetKeyDown(KeyCode.Z))
             {
                 jump = true;
             }
-            if (Input.GetKey("space"))
+            if (Input.GetKey("space") || Input.GetKey(KeyCode.Z))
             {
                 jumpDown = true;
             }
@@ -94,12 +94,12 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("float", false );
             }
             //info ataque
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 attack = true;
                 Debug.Log("ataquei");
             }
-            if (Input.GetKeyDown(KeyCode.X) && (Time.time - lastShield) > blockCd)
+            if (Input.GetKeyDown(KeyCode.C) && (Time.time - lastShield) > blockCd)
             {
                 block = true;
             }
