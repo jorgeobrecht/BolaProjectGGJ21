@@ -31,24 +31,19 @@ public class PlayerController : MonoBehaviour
     //info jogo
     public bool isAlive;
     private bool tictac = false;
-<<<<<<< HEAD
-    public int health = 3;
-   
-=======
     public int vida = 10;
->>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
 
 
     #region START, UPDATE e FIXED UPDATE
     void Start()
     {
-
+        
         rbody = gameObject.GetComponent<Rigidbody2D>();
         srender = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
         rbody.gravityScale = gScale;
         isAlive = true;
-        lastShield = -2 * blockCd;
+        lastShield = -2*blockCd;
     }
     void Update()
     {
@@ -87,7 +82,7 @@ public class PlayerController : MonoBehaviour
             {
                 hovering = false;
                 jumpDown = false;
-                anim.SetBool("float", false);
+                anim.SetBool("float", false );
             }
             //info ataque
             if (Input.GetKeyDown(KeyCode.Z))
@@ -107,7 +102,7 @@ public class PlayerController : MonoBehaviour
         //movimento
         rbody.velocity = new Vector2(dir * speed, rbody.velocity.y);
         //FLIP
-        if (dir != transform.localScale.x && dir != 0)
+        if(dir != transform.localScale.x && dir != 0)
         {
             transform.localScale = new Vector2(dir, 1);
         }
@@ -122,7 +117,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetTrigger("jump");
                 SoundManagerScript.PlaySound("Jump");
             }
-            else if (!grounded && hover)
+            else if(!grounded && hover)
             {
                 rbody.velocity = (new Vector2(rbody.velocity.x, jumpForce));
                 hover = false;
@@ -132,13 +127,13 @@ public class PlayerController : MonoBehaviour
                 SoundManagerScript.PlaySound("OpenFloat");
             }
         }
-        if (hovering && jumpDown && rbody.velocity.y < 0)
+        if(hovering && jumpDown && rbody.velocity.y < 0)
         {
             rbody.gravityScale = hoverGrav;
         }
         else
         {
-            rbody.gravityScale = gScale;
+            rbody.gravityScale = gScale; 
         }
     }
     #endregion
@@ -157,12 +152,12 @@ public class PlayerController : MonoBehaviour
     {
         dir = 0;
         canMove = false;
-
+        
     }
     private void BlockControl()
     {
 
-        if (block && (Time.time - lastShield) > blockCd)
+        if (block && (Time.time - lastShield) > blockCd )
         {
             lastShield = Time.time;
             anim.SetTrigger("block");
@@ -170,7 +165,7 @@ public class PlayerController : MonoBehaviour
             block = false;
         }
         //mostrar cooldown
-        if (lastShield + blockCd > Time.time)
+        if(lastShield + blockCd > Time.time)
         {
 
         }
@@ -185,10 +180,10 @@ public class PlayerController : MonoBehaviour
     private void AnimationControl()
     {
         //animação de andar
-        if (grounded && dir != 0)
+        if(grounded && dir != 0)
         {
             anim.SetBool("walking", true);
-
+            
         }
         else
         {
@@ -196,10 +191,10 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
+    
     public void WalkSound()
     {
-        if (tictac)
+        if(tictac)
         {
             tictac = !tictac;
             SoundManagerScript.PlaySound("Walk1");
@@ -212,70 +207,47 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-<<<<<<< HEAD
-   private void OnCollisionStay2D(Collision2D col)
-    {
-
-=======
     #region COLLISIONS
     private void OnCollisionStay2D(Collision2D col)
     {        
->>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
         //check colisão com inimigo
-        if (col.transform.tag == "enemy")
+        if(col.transform.tag == "enemy" )
         {
-<<<<<<< HEAD
-=======
-            GameController.Instance.PlayerLost();
-        }
->>>>>>> 857611199bf649021077685c700177f608e4fde0
-
-            health -= 1;
-            if (health == 0 && isAlive )
+            vida-=1;
+            if (vida == 0 && isAlive)
             {
                 GameController.Instance.PlayerLost();
             }
-
         }
+
+
     }
- 
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.transform.tag == "enemy")
         {
-<<<<<<< HEAD
-            health -= 1;
-            if (health == 0 && isAlive)
+            vida-=1;
+            if (vida == 0 && isAlive)
             {
                 GameController.Instance.PlayerLost();
             }
-
-
-=======
-            GameController.Instance.PlayerLost();
->>>>>>> 857611199bf649021077685c700177f608e4fde0
         }
     }
     // GANHOU
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //check de vitoria
-        if (collision.transform.tag == "victory")
+        if (collision.transform.tag == "victory" && isAlive)
         {
             GameController.Instance.PlayerWon();
         }
         if (collision.transform.tag == "enemy")
         {
-<<<<<<< HEAD
-            health -= 1;
-            if (health == 0 && isAlive)
+            vida-=1;
+            if (vida == 0 && isAlive)
             {
                 GameController.Instance.PlayerLost();
             }
-=======
-            vida--;
-            GameController.Instance.PlayerLost();
->>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
         }
         if (collision.transform.tag == "collectable" && isAlive)
         {
@@ -283,8 +255,5 @@ public class PlayerController : MonoBehaviour
             GameController.Instance.GetGota();
         }
     }
-<<<<<<< HEAD
-=======
     #endregion
->>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
 }
