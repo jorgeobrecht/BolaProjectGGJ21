@@ -6,21 +6,22 @@ public class follow : MonoBehaviour
 {
     
     public Transform bola;
-    public int altura = 9;
+    public float altura;
     public Vector3 v;
 
     // Start is called before the first frame update
     void Start()
     {
-        v = new Vector3(bola.position.x, bola.position.y, transform.position.z);
+        altura = bola.position.y;
+        v = new Vector3(bola.position.x, altura, transform.position.z);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         v.x = bola.position.x;
-        if(bola.position.y > 20)
-            v.y = altura + bola.position.y/2;
+        if(bola.position.y > 12)
+            v.y = altura + (bola.position.y - 12);
 
         transform.position = v;
     }
