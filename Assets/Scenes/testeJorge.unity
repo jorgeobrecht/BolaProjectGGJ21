@@ -153,8 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df28691628861842896fca07a9300ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: 0
   speed: 3
+  deathForce: 0
+  vivo: 1
 --- !u!50 &72776856
 Rigidbody2D:
   serializedVersion: 4
@@ -716,8 +717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df28691628861842896fca07a9300ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: 1
   speed: 48
+  deathForce: 0
+  vivo: 1
 --- !u!50 &395817785
 Rigidbody2D:
   serializedVersion: 4
@@ -1105,8 +1107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df28691628861842896fca07a9300ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: -1
   speed: 3
+  deathForce: 0
+  vivo: 1
 --- !u!50 &503157678
 Rigidbody2D:
   serializedVersion: 4
@@ -1941,6 +1944,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5914869361358708271, guid: f0223523215ee0c41b10f28321018c04,
         type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914869361358708271, guid: f0223523215ee0c41b10f28321018c04,
+        type: 3}
       propertyPath: hoverGrav
       value: 1
       objectReference: {fileID: 0}
@@ -2447,8 +2455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df28691628861842896fca07a9300ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: 1
   speed: 48
+  deathForce: 0
+  vivo: 1
 --- !u!50 &901627439
 Rigidbody2D:
   serializedVersion: 4
@@ -2857,8 +2866,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df28691628861842896fca07a9300ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: -1
   speed: 24
+  deathForce: 0
+  vivo: 1
 --- !u!50 &934410153
 Rigidbody2D:
   serializedVersion: 4
@@ -3769,8 +3779,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df28691628861842896fca07a9300ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: 0
   speed: 3
+  deathForce: 0
+  vivo: 1
 --- !u!50 &1343403094
 Rigidbody2D:
   serializedVersion: 4

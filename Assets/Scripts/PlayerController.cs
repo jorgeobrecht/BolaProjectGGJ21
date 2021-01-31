@@ -211,18 +211,26 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D col)
     {        
         //check colisão com inimigo
-        if(col.transform.tag == "enemy" && isAlive)
+        if(col.transform.tag == "enemy" )
         {
-            GameController.Instance.PlayerLost();
+            vida-=1;
+            if (vida == 0 && isAlive)
+            {
+                GameController.Instance.PlayerLost();
+            }
         }
 
 
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.transform.tag == "enemy" && isAlive)
+        if (col.transform.tag == "enemy")
         {
-            GameController.Instance.PlayerLost();
+            vida-=1;
+            if (vida == 0 && isAlive)
+            {
+                GameController.Instance.PlayerLost();
+            }
         }
     }
     // GANHOU
@@ -233,10 +241,13 @@ public class PlayerController : MonoBehaviour
         {
             GameController.Instance.PlayerWon();
         }
-        if (collision.transform.tag == "enemy" && isAlive)
+        if (collision.transform.tag == "enemy")
         {
-            vida--;
-            GameController.Instance.PlayerLost();
+            vida-=1;
+            if (vida == 0 && isAlive)
+            {
+                GameController.Instance.PlayerLost();
+            }
         }
         if (collision.transform.tag == "collectable" && isAlive)
         {
