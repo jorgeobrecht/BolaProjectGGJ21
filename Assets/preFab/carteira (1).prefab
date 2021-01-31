@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5777502970531515444}
   - component: {fileID: 7426045936833360668}
   - component: {fileID: 8664570499786847721}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: carteira (1)
   m_TagString: ground
   m_Icon: {fileID: 0}
