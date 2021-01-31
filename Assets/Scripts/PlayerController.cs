@@ -224,6 +224,11 @@ public class PlayerController : MonoBehaviour
         //check colisão com inimigo
         if (col.transform.tag == "enemy")
         {
+<<<<<<< HEAD
+=======
+            GameController.Instance.PlayerLost();
+        }
+>>>>>>> 857611199bf649021077685c700177f608e4fde0
 
             health -= 1;
             if (health == 0 && isAlive )
@@ -238,6 +243,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.tag == "enemy")
         {
+<<<<<<< HEAD
             health -= 1;
             if (health == 0 && isAlive)
             {
@@ -245,6 +251,9 @@ public class PlayerController : MonoBehaviour
             }
 
 
+=======
+            GameController.Instance.PlayerLost();
+>>>>>>> 857611199bf649021077685c700177f608e4fde0
         }
     }
     // GANHOU
@@ -265,8 +274,6 @@ public class PlayerController : MonoBehaviour
             }
 =======
             vida--;
-
-            srender.color = Color.black;
             GameController.Instance.PlayerLost();
 >>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
         }
