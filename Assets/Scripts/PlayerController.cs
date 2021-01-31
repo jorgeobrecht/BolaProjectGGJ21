@@ -31,7 +31,9 @@ public class PlayerController : MonoBehaviour
     //info jogo
     public bool isAlive;
     private bool tictac = false;
-    public int vida = 10;
+    public int vida = 3;
+    Renderer rend;
+    Color c;
 
 
     #region START, UPDATE e FIXED UPDATE
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour
         rbody.gravityScale = gScale;
         isAlive = true;
         lastShield = -2*blockCd;
+        rend = GetComponent<Renderer>();
+        c = rend.material.color;
     }
     void Update()
     {
@@ -218,6 +222,10 @@ public class PlayerController : MonoBehaviour
             {
                 GameController.Instance.PlayerLost();
             }
+            if (vida >= 1)
+            {
+                StartCoroutine("GetInvulnerable");
+            }
         }
 
 
@@ -230,6 +238,10 @@ public class PlayerController : MonoBehaviour
             if (vida == 0 && isAlive)
             {
                 GameController.Instance.PlayerLost();
+            }
+            if (vida >= 1)
+            {
+                StartCoroutine("GetInvulnerable");
             }
         }
     }
@@ -248,6 +260,10 @@ public class PlayerController : MonoBehaviour
             {
                 GameController.Instance.PlayerLost();
             }
+            if (vida >= 1)
+            {
+                StartCoroutine("GetInvulnerable");
+            }
         }
         if (collision.transform.tag == "collectable" && isAlive)
         {
@@ -255,5 +271,17 @@ public class PlayerController : MonoBehaviour
             GameController.Instance.GetGota();
         }
     }
+
+    IEnumerator GetInvulnerable()
+    {
+        Physics2D.IgnoreLayerCollision(8, 9, true);
+        c.a = 0.5f;
+        rend.material.color = c;
+        yield return new WaitForSeconds(3f);
+        Physics2D.IgnoreLayerCollision(8, 9, false);
+        c.a = 1f;
+        rend.material.color = c;
+    }
     #endregion
+
 }
