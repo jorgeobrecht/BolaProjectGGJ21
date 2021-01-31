@@ -256,6 +256,7 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.tag == "enemy")
         {
             vida-=1;
+            Debug.Log(vida);
             if (vida == 0 && isAlive)
             {
                 GameController.Instance.PlayerLost();
