@@ -19,7 +19,8 @@ public class follow : MonoBehaviour
     void FixedUpdate()
     {
         v.x = bola.position.x;
-        v.y = altura + bola.position.y/2;
+        if(bola.position.y > 20)
+            v.y = altura + bola.position.y/2;
 
         transform.position = v;
     }

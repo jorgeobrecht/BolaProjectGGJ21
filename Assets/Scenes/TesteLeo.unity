@@ -434,6 +434,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 486459622}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &139199570 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1315403384730122086, guid: f0223523215ee0c41b10f28321018c04,
+    type: 3}
+  m_PrefabInstance: {fileID: 667225139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &142732160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,7 +1628,7 @@ PrefabInstance:
     - target: {fileID: 7125196331884935242, guid: 38c6bcbe71cb4624cac75297a8fa212b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7125196331884935242, guid: 38c6bcbe71cb4624cac75297a8fa212b,
         type: 3}
@@ -3221,7 +3227,7 @@ PrefabInstance:
     - target: {fileID: 7125196331884935242, guid: 38c6bcbe71cb4624cac75297a8fa212b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7125196331884935242, guid: 38c6bcbe71cb4624cac75297a8fa212b,
         type: 3}
@@ -3487,7 +3493,7 @@ PrefabInstance:
     - target: {fileID: 7125196331884935242, guid: 38c6bcbe71cb4624cac75297a8fa212b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7125196331884935242, guid: 38c6bcbe71cb4624cac75297a8fa212b,
         type: 3}
@@ -3736,6 +3742,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1145809929060095196, guid: b7291b37fbe1ac84da4e0555789871f3,
+        type: 3}
+      propertyPath: bola
+      value: 
+      objectReference: {fileID: 139199570}
     - target: {fileID: 1145809929060095197, guid: b7291b37fbe1ac84da4e0555789871f3,
         type: 3}
       propertyPath: m_RootOrder
