@@ -31,11 +31,15 @@ public class PlayerController : MonoBehaviour
     //info jogo
     public bool isAlive;
     private bool tictac = false;
+<<<<<<< HEAD
     public int health = 3;
    
+=======
+    public int vida = 10;
+>>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
 
 
-
+    #region START, UPDATE e FIXED UPDATE
     void Start()
     {
 
@@ -61,6 +65,9 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
     }
 
+    #endregion
+
+    #region INPUT E MOVIMENTO
     //receber informação do teclado
     void getInput()
     {
@@ -134,7 +141,9 @@ public class PlayerController : MonoBehaviour
             rbody.gravityScale = gScale;
         }
     }
+    #endregion
 
+    #region ATAQUE e BLOCK
     private void AttackControl()
     {
         if (attack)
@@ -166,6 +175,9 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    #endregion
+
+    #region ANIMAÇÂO E SOM
     public void Move()
     {
         canMove = true;
@@ -198,10 +210,17 @@ public class PlayerController : MonoBehaviour
             SoundManagerScript.PlaySound("Walk2");
         }
     }
+    #endregion
 
+<<<<<<< HEAD
    private void OnCollisionStay2D(Collision2D col)
     {
 
+=======
+    #region COLLISIONS
+    private void OnCollisionStay2D(Collision2D col)
+    {        
+>>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
         //check colisão com inimigo
         if (col.transform.tag == "enemy")
         {
@@ -238,11 +257,27 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.transform.tag == "enemy")
         {
+<<<<<<< HEAD
             health -= 1;
             if (health == 0 && isAlive)
             {
                 GameController.Instance.PlayerLost();
             }
+=======
+            vida--;
+
+            srender.color = Color.black;
+            GameController.Instance.PlayerLost();
+>>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
+        }
+        if (collision.transform.tag == "collectable" && isAlive)
+        {
+            collision.gameObject.SetActive(false);
+            GameController.Instance.GetGota();
         }
     }
+<<<<<<< HEAD
+=======
+    #endregion
+>>>>>>> 962dcf5350de42c6c69fa06eaf0d98a318faf7e5
 }
