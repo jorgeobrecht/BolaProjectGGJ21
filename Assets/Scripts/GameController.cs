@@ -117,7 +117,6 @@ using UnityEngine.UI;
     {
         isPlaying = true;
         isPaused = false;
-        tdsGotas.SetActive(false);
         gotas = GameObject.FindGameObjectsWithTag("collectable");
         maxGotas = gotas.Length;
         playerGotas = maxGotas - gotas.Length;
