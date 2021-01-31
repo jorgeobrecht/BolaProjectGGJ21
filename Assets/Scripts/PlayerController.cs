@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     //info jogo
     public bool isAlive;
     private bool tictac = false;
+    public int vida = 10;
 
 
     #region START, UPDATE e FIXED UPDATE
@@ -206,7 +207,7 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-
+    #region COLLISIONS
     private void OnCollisionStay2D(Collision2D col)
     {        
         //check colisão com inimigo
@@ -236,6 +237,8 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.transform.tag == "enemy" && isAlive)
         {
+            vida--;
+
             srender.color = Color.black;
             GameController.Instance.PlayerLost();
         }
@@ -245,5 +248,5 @@ public class PlayerController : MonoBehaviour
             GameController.Instance.GetGota();
         }
     }
-
+    #endregion
 }

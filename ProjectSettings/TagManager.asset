@@ -8,6 +8,7 @@ TagManager:
   - wall
   - enemy
   - victory
+  - ataque
   - collectable
   layers:
   - Default
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Enemy
   - Projetil
-  - 
+  - combate
   - 
   - 
   - 
