@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip WalkSound1, WalkSound2, JumpSound, OpenFloatSound, FloatSound, AttackSound, DeathSound, VictorySound, OpenMenuSound, MenuCursorSound;
+    public static AudioClip WalkSound1, WalkSound2, JumpSound, OpenFloatSound, FloatSound1, FloatSound2, AttackSound, DeathSound, VictorySound, OpenMenuSound, MenuCursorSound1, MenuCursorSound2, MenuCursorSound3;
     static AudioSource audioSrc;
         
     // Start is called before the first frame update
     void Start()
     {
-        WalkSound1 = Resources.Load<AudioClip>("walk 1 (placeholder)");
-        WalkSound2 = Resources.Load<AudioClip>("walk 2 (placeholder)");
-        JumpSound = Resources.Load<AudioClip>("jump (placeholder)");
-        OpenFloatSound = Resources.Load<AudioClip>("open float (placeholder)");
-        FloatSound = Resources.Load<AudioClip>("float sound (placeholder)");
-        AttackSound = Resources.Load<AudioClip>("Attack (placeholder)");
-        DeathSound = Resources.Load<AudioClip>("death sound (placeholder)");
-        VictorySound = Resources.Load<AudioClip>("victory sound (place holder)");
-        OpenMenuSound = Resources.Load<AudioClip>("Open Menu(placeholder)");
-        MenuCursorSound = Resources.Load<AudioClip>("menu cursor (place holder)");
+        WalkSound1 = Resources.Load<AudioClip>("walk 1 (new)");
+        WalkSound2 = Resources.Load<AudioClip>("walk 2 (new)");
+        JumpSound = Resources.Load<AudioClip>("jump (new)");
+        OpenFloatSound = Resources.Load<AudioClip>("open float (new)");
+        FloatSound1 = Resources.Load<AudioClip>("floating 1 (new)");
+        FloatSound2 = Resources.Load<AudioClip>("floating 2 (new)");
+        AttackSound = Resources.Load<AudioClip>("Schlap (new)");
+        DeathSound = Resources.Load<AudioClip>("death sound (new)");
+        VictorySound = Resources.Load<AudioClip>("victory jingle (new)");
+        OpenMenuSound = Resources.Load<AudioClip>("start (new)");
+        MenuCursorSound1 = Resources.Load<AudioClip>("menu cursor 1 (new)");
+        MenuCursorSound2 = Resources.Load<AudioClip>("menu cursor 2 (new)");
+        MenuCursorSound3 = Resources.Load<AudioClip>("menu cursor 3 (new)");
 
         audioSrc = GetComponent<AudioSource> ();
     }
@@ -41,7 +44,10 @@ public class SoundManagerScript : MonoBehaviour
                 audioSrc.PlayOneShot(OpenFloatSound);
                 break;
             case "Float":
-                audioSrc.PlayOneShot(FloatSound);
+                audioSrc.PlayOneShot(FloatSound1);
+                break;
+            case "Float1":
+                audioSrc.PlayOneShot(FloatSound2);
                 break;
             case "Attack":
                 audioSrc.PlayOneShot(AttackSound);
@@ -56,7 +62,13 @@ public class SoundManagerScript : MonoBehaviour
                 audioSrc.PlayOneShot(OpenMenuSound);
                 break;
             case "MenuCursor":
-                audioSrc.PlayOneShot(MenuCursorSound);
+                audioSrc.PlayOneShot(MenuCursorSound1);
+                break;
+            case "MenuCursor1":
+                audioSrc.PlayOneShot(MenuCursorSound2);
+                break;
+            case "MenuCursor2":
+                audioSrc.PlayOneShot(MenuCursorSound3);
                 break;
             case "Walk2":
                 audioSrc.PlayOneShot(WalkSound2);
