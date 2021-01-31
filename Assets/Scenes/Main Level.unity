@@ -7002,6 +7002,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1386772731195591670, guid: b794f93082cce3d44a8bda72a524fad3,
+        type: 3}
+      propertyPath: limit
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2437924746996714199, guid: b794f93082cce3d44a8bda72a524fad3,
         type: 3}
       propertyPath: m_Interactable
@@ -7316,7 +7321,7 @@ PrefabInstance:
     - target: {fileID: 2437924748613702576, guid: b794f93082cce3d44a8bda72a524fad3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2437924748613702580, guid: b794f93082cce3d44a8bda72a524fad3,
         type: 3}
@@ -7435,6 +7440,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 7e7ba26a1b5327444aaed6d336d2aefd,
         type: 3}
+    - target: {fileID: 3367334720893453818, guid: b794f93082cce3d44a8bda72a524fad3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 403
+      objectReference: {fileID: 0}
     - target: {fileID: 6859662274612363455, guid: b794f93082cce3d44a8bda72a524fad3,
         type: 3}
       propertyPath: player
@@ -8065,7 +8075,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 1266675738}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1985930612
 SpriteRenderer:
