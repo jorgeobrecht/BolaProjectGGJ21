@@ -11,6 +11,7 @@ using UnityEngine.UI;
     public static bool isPlaying;
     public static bool isDead;
     public static bool isPaused;
+    public GameObject tdsGotas;
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
     public GameObject victoryScreen;
@@ -52,11 +53,16 @@ using UnityEngine.UI;
         Time.timeScale = 0f;
         Debug.Log("Player won");
         victoryScreen.SetActive(true);
+
+        if(playerGotas == maxGotas)
+            tdsGotas.SetActive(true);
+
     }
 
     public void PlayerLost()
     {
         // função para quando a condição de derrota for verdadeira
+        Time.timeScale = 0f;
         Debug.Log("Player lost");
         player.isAlive = false;
         gameOverScreen.SetActive(true);
@@ -110,6 +116,7 @@ using UnityEngine.UI;
     {
         isPlaying = true;
         isPaused = false;
+        tdsGotas.SetActive(false);
         gotas = GameObject.FindGameObjectsWithTag("collectable");
         maxGotas = gotas.Length;
         playerGotas = maxGotas - gotas.Length;
