@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315403384168091997}
   - component: {fileID: 1315403384168091998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hitbox block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.5, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 5}
+  m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
 --- !u!1 &1315403384730122084
 GameObject:
@@ -283,7 +283,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.5, y: -1}
+  m_Offset: {x: 1.8806286, y: -0.5649955}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -294,7 +294,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.5}
+  m_Size: {x: 2.7612572, y: 3.370009}
   m_EdgeRadius: 0
 --- !u!1 &1315403385145251388
 GameObject:

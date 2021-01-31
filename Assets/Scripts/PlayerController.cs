@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Freeze()
     {
-        dir = 0;
+        rbody.velocity = new Vector2(0, rbody.velocity.y);
         canMove = false;
         
     }
@@ -258,16 +258,19 @@ public class PlayerController : MonoBehaviour
     }
     private void Dano()
     {
-        vida -= 1;
-        if (vida == 0 && isAlive)
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("playerShield"))
         {
-            GameController.Instance.PlayerLost();
-        }
-        if (vida >= 1)
-        {
-            StartCoroutine("GetInvulnerable");
-            canMove = false;
-            rbody.velocity = new Vector2(BackX * BDir, BackY);
+            vida -= 1;
+            if (vida == 0 && isAlive)
+            {
+                GameController.Instance.PlayerLost();
+            }
+            if (vida >= 1)
+            {
+                StartCoroutine("GetInvulnerable");
+                canMove = false;
+                rbody.velocity = new Vector2(BackX * BDir, BackY);
+            }
         }
     }
 
