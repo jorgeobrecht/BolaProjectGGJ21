@@ -482,4 +482,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5201e13e4ee08484aaf02cef093f3d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 10
+  limit: 60

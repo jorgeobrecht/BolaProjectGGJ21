@@ -124,6 +124,7 @@ using UnityEngine.UI;
         gotas = GameObject.FindGameObjectsWithTag("collectable");
         maxGotas = gotas.Length;
         playerGotas = maxGotas - gotas.Length;
+        hudManager.updateGotasCounter(playerGotas);
     }
 
 
