@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - victory
   - ataque
+  - collectable
   layers:
   - Default
   - TransparentFX

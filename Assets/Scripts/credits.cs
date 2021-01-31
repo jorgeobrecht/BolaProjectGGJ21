@@ -8,8 +8,10 @@ using UnityEngine.UI;
 public class credits : MonoBehaviour
 {
     public GameObject creditos;
+    public int altura;
     string textoCreditos;
-    Vector3 rollSpeed = new Vector3(0, 1f, 0);
+
+    Vector3 rollSpeed = new Vector3(0, 2f, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class credits : MonoBehaviour
     {
         creditos.transform.position += rollSpeed;
 
-        if (creditos.transform.position.y >= 350)
+        if (creditos.transform.position.y >= altura)
             SceneManager.LoadScene("StartMenu");
     }
 }
