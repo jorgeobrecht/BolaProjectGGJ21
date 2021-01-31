@@ -27,8 +27,12 @@ public class GroundCheck : MonoBehaviour
             player.jump = false;
         }
     }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        SoundManagerScript.PlaySound("Walk2");
+    }
 
-    private void OnTriggerExit2D(Collider2D col)
+        private void OnTriggerExit2D(Collider2D col)
     {
         //groundcheck
         if (col.transform.tag == "ground")

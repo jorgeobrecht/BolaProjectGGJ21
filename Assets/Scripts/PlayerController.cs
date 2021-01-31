@@ -141,10 +141,12 @@ public class PlayerController : MonoBehaviour
         if(hovering && jumpDown && rbody.velocity.y < 0)
         {
             rbody.gravityScale = hoverGrav;
+            
         }
         else
         {
             rbody.gravityScale = gScale; 
+
         }
     }
     #endregion
@@ -155,7 +157,7 @@ public class PlayerController : MonoBehaviour
         if (attack)
         {
             anim.SetTrigger("attack");
-            SoundManagerScript.PlaySound("OpenFloat");
+            SoundManagerScript.PlaySound("Attack");
             attack = false;
         }
     }
@@ -172,7 +174,7 @@ public class PlayerController : MonoBehaviour
         {
             lastShield = Time.time;
             anim.SetTrigger("block");
-            SoundManagerScript.PlaySound("Attack");
+            SoundManagerScript.PlaySound("defense");
             block = false;
         }
         //mostrar cooldown
@@ -216,6 +218,10 @@ public class PlayerController : MonoBehaviour
             SoundManagerScript.PlaySound("Walk2");
         }
     }
+    public void floatSound()
+    {
+        SoundManagerScript.PlaySound("Float1");
+    }
     #endregion
 
     #region COLLISIONS
@@ -248,6 +254,7 @@ public class PlayerController : MonoBehaviour
         //check de vitoria
         if (collision.transform.tag == "victory" && isAlive)
         {
+            SoundManagerScript.PlaySound("Victory");
             GameController.Instance.PlayerWon();
         }
         if (collision.transform.tag == "enemy")
@@ -257,6 +264,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.transform.tag == "collectable" && isAlive)
         {
+            SoundManagerScript.PlaySound("collectable");
             collision.gameObject.SetActive(false);
             GameController.Instance.GetGota();
         }
@@ -265,6 +273,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("playerShield"))
         {
+            SoundManagerScript.PlaySound("damage");
             vida -= 1;
             if (vida == 0 && isAlive)
             {

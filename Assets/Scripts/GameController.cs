@@ -67,6 +67,7 @@ using UnityEngine.UI;
         Debug.Log("Player lost");
         player.isAlive = false;
         gameOverScreen.SetActive(true);
+        SoundManagerScript.PlaySound("Death");
     }
 
     // Start is called before the first frame update
@@ -86,6 +87,7 @@ using UnityEngine.UI;
             Time.timeScale = 1f;
             isPaused = false;
             pauseMenu.SetActive(false);
+            SoundManagerScript.PlaySound("OpenMenu");
         }
             
         else
@@ -93,6 +95,7 @@ using UnityEngine.UI;
             Time.timeScale = 0f;
             isPaused = true;
             pauseMenu.SetActive(true);
+            SoundManagerScript.PlaySound("OpenMenu");
         }
     }
 
