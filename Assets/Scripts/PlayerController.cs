@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
         if (attack)
         {
             anim.SetTrigger("attack");
-            SoundManagerScript.PlaySound("Attack");
+           // SoundManagerScript.PlaySound("Attack");
             attack = false;
         }
     }
