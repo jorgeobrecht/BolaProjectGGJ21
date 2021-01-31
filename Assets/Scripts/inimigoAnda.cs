@@ -49,7 +49,7 @@ public class inimigoAnda : MonoBehaviour
         }
         if (collision.tag == "ataque")
         {
-            
+            SoundManagerScript.PlaySound("kill");
             Morto();
         }
     }
